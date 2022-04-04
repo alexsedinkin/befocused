@@ -1,0 +1,10 @@
+<%= bootstrap_form_for @goal, :html => { 
+    :id => @goal.new_record? ? "new_goal" : "edit_goal_#{@goal.id}", name: "goal_form" }  do |f| %>
+
+    <%= f.text_field :title, required: true %>
+    <%= f.text_area :descr, label: "Description", required: true  %>
+    <%= f.select :priority, [['High',2],['Medium',1],['Low',0]] %>
+    <%= f.date_field :due_date, :start_year => Date.current.year, required: true %>
+    <br/>
+<% end %>
+

@@ -1,0 +1,17 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+.navbar-nav .nav-item .nav-link.active {
+    border-top: #FFFFFF;
+    border-right: #FFFFFF;
+    border-left: #FFFFFF;
+    border-bottom: 3px solid blue;
+}
+
+.container {
+    padding: 30px 15px 0;
+}
+
+.footer .container {
+    padding: 5px 15px 0;
+}

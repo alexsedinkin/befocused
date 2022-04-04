@@ -1,0 +1,51 @@
+<div class="container">
+    <p><h5>My Goals</h5></p>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <%= link_to "All #{@gall_count}", 
+                        goals_path,
+                        class: "nav-link #{current_page?(goals_path, check_parameters: :status) ? 'active' : ''}", "data-toggle": "tab" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Incomplete #{@gincompl_count}", 
+                        goals_path(status: false),
+                        class: "nav-link #{current_page?(goals_path(status: false)) ? 'active' : ''}", "data-toggle": "tab" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Completed #{@gcompl_count}", 
+                        goals_path(status: true),
+                        class: "nav-link #{current_page?(goals_path(status: true)) ? 'active' : ''}", "data-toggle": "tab" %>
+                </li>
+            </ul>
+            <%= link_to "Create a Goal", new_goal_path,
+                class: "btn btn-primary" %>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Goal Name</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Priority</th>
+            </thead>
+            <tbody>
+            <% @goals.each do |goal| %>
+                <tr scope="row">
+                    <td class="col-sm">
+                        <%= goal.status_icon %>&nbsp;&nbsp;&nbsp;
+                        <%= link_to goal.title, goal %>
+                    </td>
+                    <td class="col-sm"><%= goal.due_date %></td>
+                    <td class="col-sm">
+                        <%= goal.priority_icon %>
+                        <%= goal.priority_name %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

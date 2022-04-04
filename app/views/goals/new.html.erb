@@ -1,0 +1,21 @@
+<div class="container">
+    <h5 class="card-title"><%= @goal.new_record? ? "Create a Goal" : "Edit a Goal" %></h5>
+    <div class="card">
+        <div class="card-body">
+            <%= render 'goal_form', goal: @goal %>
+        </div>
+    </div>
+</div>
+<footer class="footer mt-auto py-3 bg-light">
+    <ul class="nav justify-content-center">
+        <li>
+            <%= link_to "Cancel", goals_path, class: "btn btn-secondary" %>
+            <input type="submit" 
+                form=<%= @goal.new_record? ? "new_goal" : "edit_goal_#{@goal.id}" %> 
+                value=<%= @goal.new_record? ? "Create" : "Save" %> 
+                class="btn btn-primary" />
+        </li>
+    </ul>
+</footer>
+
+

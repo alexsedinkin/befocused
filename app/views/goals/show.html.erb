@@ -1,0 +1,41 @@
+<div class="container">
+    <%= link_to "<  My Goals", goals_path, class: "nav-link active"  %>
+    <br/>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <div data-controller="goal">
+                <%= goal_status_btn(@goal) %>
+            </div>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <i class="bi bi-pencil-square"></i>
+            <li class="nav-item">
+                <%= link_to "Edit", edit_goal_path(@goal),
+                    class: "nav-link" %>
+            </li>
+            <i class="bi-trash"></i>
+            <li class="nav-item">
+                <%= link_to "Delete", @goal,
+                    data: { turbo_confirm: 'Are you sure you want to delete this goal?', turbo_method: :delete },
+                    class: "nav-link" %>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= @goal.title %></h5>
+                <div class="row">
+                    <div class="col-sm"><i class="bi bi-calendar-date">  <%= @goal.due_date %></i></div>
+                    <div class="col-sm">
+                        <%= @goal.priority_icon %>
+                        <%= @goal.priority_name %></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"><%= @goal.descr %></div>
+                    <div class="col-sm"></div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
