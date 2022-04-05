@@ -75,3 +75,12 @@ group :production do
 end
 
 gem "bootstrap_form", "~> 5.0"
+
+# grape
+gem "grape", "~> 1.6"
+gem "grape-entity"
+# swagger
+gem "grape-swagger"
+gem "grape-swagger-entity"
+gem "grape-swagger-rails"
+gem "grape-swagger-representable"

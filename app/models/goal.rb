@@ -1,14 +1,11 @@
-
 class Goal < ApplicationRecord
+    #format: { with: /\w/, 
+    #   message: "please enter valid symbols" },
     validates :title, 
         length: { maximum: 80, too_long: "%{count} characters is the maximum allowed" }, 
-        format: { with: /\W/, 
-            message: "please enter valid symbols" },
         presence: true
     validates :descr, 
         length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }, 
-        format: { with: /\W/, 
-            message: "please enter valid symbols" },
         presence: true
     validates :due_date, presence: true
 

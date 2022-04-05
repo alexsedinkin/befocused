@@ -32,3 +32,5 @@ module Befocused
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+#Goals::API.compile!
