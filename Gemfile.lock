@@ -113,6 +113,8 @@ GEM
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
     erubi (1.10.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     grape (1.6.2)
@@ -277,6 +279,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  faker
   grape (~> 1.6)
   grape-entity
   grape-swagger

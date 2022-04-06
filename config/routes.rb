@@ -7,5 +7,12 @@ Rails.application.routes.draw do
 
     root 'welcome#hello'
 
+    # API
     mount Goals::API => '/'
+
+    resources :users, only: [] do
+        collection do
+            post 'import'
+        end
+    end
 end

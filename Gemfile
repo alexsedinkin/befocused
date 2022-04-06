@@ -84,3 +84,6 @@ gem "grape-swagger"
 gem "grape-swagger-entity"
 gem "grape-swagger-rails"
 gem "grape-swagger-representable"
+
+# faker
+gem "faker"
